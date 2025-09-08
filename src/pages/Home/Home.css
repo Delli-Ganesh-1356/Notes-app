@@ -1,0 +1,39 @@
+.home-container {
+  padding: 20px;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+}
+
+.hover-card:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+.username-display{
+  text-transform: uppercase;
+}
+.note-content-scroll {
+  max-height: 110px;
+  overflow-y: auto;
+}
+
+.note-content-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.note-content-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .note-content-scroll {
+    max-height: 80px;
+  }
+  .home-container h2, .user-notes-form h3 {
+    font-size: 1.5rem;
+  }
+  .card-body {
+    padding: 0.75rem;
+  }
+}
