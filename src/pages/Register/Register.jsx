@@ -20,16 +20,20 @@ const Register = () => {
   };
 
   const handleRegister = async (e) => {
-    e.preventDefault();
-    try {
-      await createUser(data);
-      toast.success("Registration successful! Please log in.");
-      navigate("/login");
-    } catch (error) {
-      toast.error("Error occurred: " + (error.response?.data?.message || error.message));
-      console.log(error);
-    }
-  };
+  e.preventDefault();
+  try {
+    await createUser(data); // pass the state object directly
+    toast.success("Registration successful! Please log in.");
+    navigate("/login");
+  } catch (error) {
+    // Show backend error message if available
+    toast.error(
+      "Error occurred: " + (error.response?.data?.message || error.message)
+    );
+    console.log("Registration error:", error.response?.data || error.message);
+  }
+};
+
 
   return (
     <div className="register-page" style={{
